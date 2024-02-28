@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    document.getElementById('myForm').addEventListener('submit', function(event) {
+    document.getElementById('myForm').addEventListener('submit', function (event) {
         // Mencegah form dikirim secara default
         event.preventDefault();
 
@@ -42,49 +42,36 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         // Menambahkan tombol ke dalam container
         container.appendChild(button);
+
+        button.addEventListener('click', function () {
+            var inputs = container.getElementsByTagName('input');
+            var radioContainer = document.createElement('div');
+
+            for (var i = 0; i < inputs.length; i++) {
+                var radio = document.createElement('input');
+                radio.type = 'radio';
+                radio.name = 'pilihan';
+                radio.value = inputs[i].value;
+
+                var label = document.createElement('label');
+                label.textContent = inputs[i].value;
+
+                radioContainer.appendChild(radio);
+                radioContainer.appendChild(label);
+                radioContainer.appendChild(document.createElement('br'));
+            }
+
+            var submitbutton = document.createElement('button');
+            submitbutton.type = 'button';
+            submitbutton.className = 'btn btn-primary';
+            submitbutton.textContent = 'Submit';
+
+            radioContainer.appendChild(submitbutton);
+            container.appendChild(radioContainer);
+        });
     });
 });
 
-
-
-
-// // Mengatur radio Button
-
-// document.getElementById('myForm').addEventListener('submit', function (event) {
-//     // Mencegah form dikirim secara default
-//     event.preventDefault();
-
-//     // Mengambil jumlah dari input
-//     var jumlah = document.getElementById('exampleInputNumber').value;
-
-//     // Mengambil elemen tempat menampilkan pilihan
-//     var container = document.getElementById('choicesContainer');
-
-//     // Menghapus pilihan sebelumnya
-//     container.innerHTML = '';
-
-//     // Membuat pilihan baru sesuai jumlah
-//     for (var i = 0; i < jumlah; i++) {
-//         var choice = document.createElement('div');
-//         choice.className = 'form-check';
-
-//         var input = document.createElement('input');
-//         input.className = 'form-check-input';
-//         input.type = 'radio';
-//         input.name = 'flexRadioDefault';
-//         input.id = 'flexRadioDefault' + (i + 1);
-
-//         var label = document.createElement('label');
-//         label.className = 'form-check-label';
-//         label.htmlFor = 'flexRadioDefault' + (i + 1);
-//         label.textContent = 'Pilihan ' + (i + 1);
-
-//         choice.appendChild(input);
-//         choice.appendChild(label);
-
-//         container.appendChild(choice);
-//     }
-// });
 
 
 
