@@ -1,0 +1,151 @@
+/* Container Styles */
+.Container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Navigation Styles */
+.nav-link:hover {
+    color: #00ff22;
+    transition: color 0.2s ease-in-out;
+    transform: scale(1.2);
+}
+
+/* Button Styles */
+.btn {
+    padding: 15px;
+    border: none;
+    color: yellow;
+    font-weight: bold;
+    background: rgb(1, 74, 1);
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    background: rgb(1, 74, 1);
+    color: white;
+    cursor: pointer;
+    transform: scale(1.5);
+    animation: pulse 1s infinite;
+}
+
+/* Card Styles */
+.card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background: rgb(96, 230, 178);
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0 10px 20px rgba(38, 176, 226, 0.433), 0 6px 6px rgba(121, 224, 65, 0.23);
+    background: linear-gradient(to right, rgb(74, 154, 104), rgb(44, 199, 255));
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card:hover {
+    border-radius: 15px;
+    width: 350px;
+    height: 250px;
+}
+
+.card:hover .text-section {
+    opacity: 1;
+}
+
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+/* Image Styles */
+.Belanja,
+.Hotel,
+.Makan,
+.Transport,
+.Tujuan {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: 0.5s ease-in-out;
+    animation: float 2s ease-in-out infinite;
+}
+
+.Belanja:hover,
+.Hotel:hover,
+.Makan:hover,
+.Transport:hover,
+.Tujuan:hover {
+    transform: scale(1.2);
+    animation: spin 2s linear infinite;
+}
+
+/* Text Section Styles */
+.text-section {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 180px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Keyframes */
+@keyframes float {
+    0% {
+        transform: translatey(0px);
+    }
+
+    50% {
+        transform: translatey(-20px);
+    }
+
+    100% {
+        transform: translatey(0px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .Belanja,
+    .Hotel,
+    .Makan,
+    .Transport,
+    .Tujuan {
+        width: 100px;
+        height: 100px;
+    }
+}
