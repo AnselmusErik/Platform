@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    document.getElementById('myForm').addEventListener('submit', function (event) {
+    document.getElementById('myForm').addEventListener('OK', function (event) {
         // Mencegah form dikirim secara default
         event.preventDefault();
 
@@ -73,6 +73,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
-
-
+// saya ingin dari code yang saya berikan itu supaya ketika user
 
