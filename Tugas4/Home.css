@@ -72,3 +72,30 @@ body {
         color: #6c757d;
     }
 }
+
+.modal-content {
+    background-color: #6c757d; /* Warna latar belakang modal */
+    color: #ffffff; /* Warna teks modal */
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(17, 163, 231, 0.978);
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+    border: none; /* Menghapus border */
+    padding: 15px;
+    background-color: inherit; /* Menggunakan warna latar belakang yang sama dengan .modal-content */
+    color: inherit; /* Menggunakan warna teks yang sama dengan .modal-content */
+}
+
+.modal-footer .btn {
+    background-color: #ffffff; /* Warna latar belakang tombol */
+    color: #6c757d; /* Warna teks tombol */
+    border-color: #ffffff; /* Warna border tombol */
+}
+
+.modal-footer .btn:hover {
+    background-color: #e9ecef; /* Warna latar belakang tombol saat dihover */
+    border-color: #e9ecef; /* Warna border tombol saat dihover */
+}

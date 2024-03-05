@@ -1,20 +1,12 @@
-//  Awal yaa
-
 document.addEventListener('DOMContentLoaded', (event) => {
+    // Event listener untuk form submit
     document.getElementById('myForm').addEventListener('submit', function (event) {
-        // Mencegah form dikirim secara default
         event.preventDefault();
 
-        // Mengambil jumlah dari input
         var jumlah = document.getElementById('exampleInputNumber').value;
-
-        // Mengambil elemen tempat menampilkan input nadvsfama
         var container = document.getElementById('namesContainer');
-
-        // Menghapus input nama sebelumnya
         container.innerHTML = '';
 
-        // Membuat input nama baru sesuai jumlah
         for (var i = 0; i < jumlah; i++) {
             var div = document.createElement('div');
             div.className = 'mb-3';
@@ -32,22 +24,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             div.appendChild(label);
             div.appendChild(input);
-
             container.appendChild(div);
         }
 
-        // Membuat tombol baru
         var button = document.createElement('button');
         button.type = 'button';
         button.className = 'btn btn-primary';
         button.textContent = 'OK';
-
-        // Menambahkan tombol ke dalam container
         container.appendChild(button);
 
         button.addEventListener('click', function () {
             var inputs = container.getElementsByTagName('input');
             var radioContainer = document.createElement('div');
+            var pilihanText = '';
 
             for (var i = 0; i < inputs.length; i++) {
                 var radio = document.createElement('input');
@@ -61,6 +50,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
                 radioContainer.appendChild(radio);
                 radioContainer.appendChild(label);
                 radioContainer.appendChild(document.createElement('br'));
+
+                pilihanText += inputs[i].value;
+                if (i < inputs.length - 1) {
+                    pilihanText += ', ';
+                }
             }
 
             var submitbutton = document.createElement('button');
@@ -70,8 +64,33 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
             radioContainer.appendChild(submitbutton);
             container.appendChild(radioContainer);
+
+            submitbutton.addEventListener('click', function () {
+                var nama = document.getElementById('exampleInputName').value;
+                var jumlah = document.getElementById('exampleInputNumber').value;
+                var pilihan = document.querySelector('input[name="pilihan"]:checked').value;
+
+                var modalBody = document.querySelector('.modal-body');
+                modalBody.textContent = 'Halo, nama saya ' + nama + '. Saya memiliki sejumlah ' + jumlah + ' pilihan yaitu ' + pilihanText + ' dan saya memilih ' + pilihan + '.';
+
+                var myModal = new bootstrap.Modal(document.querySelector('.modal'));
+                myModal.show();
+            });
         });
     });
+
+    // Event listener untuk tombol close
+    document.querySelector('.modal').addEventListener('hidden.bs.modal', function () {
+        // Membersihkan nilai input
+        var inputs = document.querySelectorAll('input');
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].value = '';
+        }
+
+        // Menghapus konten lainnya di dalam container
+        var container = document.getElementById('namesContainer');
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
+    });
 });
-
-
