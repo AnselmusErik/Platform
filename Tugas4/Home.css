@@ -1,14 +1,14 @@
 body {
     background-color: #e9e5f5;
     background-image: url('back.jpg');
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 100vh;
 }
 
 .center-box {
-    background-color: rgba(255, 255, 255, 0.5); 
+    background-color: rgba(255, 255, 255, 0.5);
     margin: 0 auto;
     width: 50%;
     padding: 20px;
@@ -18,40 +18,30 @@ body {
 
 #title {
     animation: color-change 2s infinite;
-    /* Animasi perubahan warna teks judul */
 }
 
 #subtitle {
     color: #000000;
-    /* Warna teks subjudul */
 }
 
 .form-control {
     border-radius: 0;
-    /* Sudut bulat input */
     transition: box-shadow 0.3s ease;
-    /* Transisi bayangan input */
 }
 
 .form-control:focus {
     box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.25);
-    /* Bayangan input saat difokuskan */
 }
 
 .btn-primary {
     background-color: #6c757d;
-    /* Warna latar belakang tombol */
     border-color: #6c757d;
-    /* Warna border tombol */
     transition: background-color 0.5s ease, border-color 0.5s ease;
-    /* Transisi warna latar belakang dan border tombol */
 }
 
 .btn-primary:hover {
     background-color: #0b6ac9;
-    /* Warna latar belakang tombol saat dihover */
     border-color: #000000;
-    /* Warna border tombol saat dihover */
 }
 
 .navbar {
@@ -74,8 +64,8 @@ body {
 }
 
 .modal-content {
-    background-color: #6c757d; /* Warna latar belakang modal */
-    color: #ffffff; /* Warna teks modal */
+    background-color: #6c757dbd;
+    color: #ffffff;
     border-radius: 20px;
     box-shadow: 0 0 50px rgba(17, 163, 231, 0.978);
 }
@@ -83,19 +73,19 @@ body {
 .modal-header,
 .modal-body,
 .modal-footer {
-    border: none; /* Menghapus border */
+    border: none;
     padding: 15px;
-    background-color: inherit; /* Menggunakan warna latar belakang yang sama dengan .modal-content */
-    color: inherit; /* Menggunakan warna teks yang sama dengan .modal-content */
+    background-color: inherit;
+    color: inherit;
 }
 
 .modal-footer .btn {
-    background-color: #ffffff; /* Warna latar belakang tombol */
-    color: #6c757d; /* Warna teks tombol */
-    border-color: #ffffff; /* Warna border tombol */
+    background-color: #ffffff;
+    color: #6c757d;
+    border-color: #ffffff;
 }
 
 .modal-footer .btn:hover {
-    background-color: #e9ecef; /* Warna latar belakang tombol saat dihover */
-    border-color: #e9ecef; /* Warna border tombol saat dihover */
+    background-color: #e9ecef;
+    border-color: #e9ecef;
 }
