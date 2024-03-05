@@ -73,6 +73,41 @@ body {
     }
 }
 
+/* Modal */
+.modal {
+    display: none; /* Modal awalnya disembunyikan */
+    position: fixed; /* Tetap di tempat */
+    z-index: 1; /* Berada di atas semua elemen lain */
+    padding-top: 100px; /* Lokasi modal */
+    left: 0;
+    top: 0;
+    width: 100%; /* Lebar penuh */
+    height: 100%; /* Tinggi penuh */
+    overflow: auto; /* Memungkinkan scroll jika diperlukan */
+    background-color: rgb(0,0,0); /* Warna latar belakang hitam */
+    background-color: rgba(0,0,0,0.4); /* Warna latar belakang hitam dengan sedikit transparansi */
+}
 
+/* Konten modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
 
+/* Tutup modal */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
 
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
