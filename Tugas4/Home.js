@@ -1,9 +1,16 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    // Event listener untuk form submit
     document.getElementById('myForm').addEventListener('submit', function (event) {
         event.preventDefault();
 
+        var nama = document.getElementById('exampleInputName').value;
         var jumlah = document.getElementById('exampleInputNumber').value;
+
+        // Cek apakah nama hanya mengandung huruf
+        if (!/^[a-zA-Z\s]*$/.test(nama)) {
+            alert("Nama hanya bisa menggunakan huruf");
+            event.preventDefault();
+            return;
+        }
         var container = document.getElementById('namesContainer');
         container.innerHTML = '';
 
@@ -66,8 +73,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             container.appendChild(radioContainer);
 
             submitbutton.addEventListener('click', function () {
-                var nama = document.getElementById('exampleInputName').value;
-                var jumlah = document.getElementById('exampleInputNumber').value;
                 var pilihan = document.querySelector('input[name="pilihan"]:checked').value;
 
                 var modalBody = document.querySelector('.modal-body');
@@ -79,15 +84,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     });
 
-    // Event listener untuk tombol close
     document.querySelector('.modal').addEventListener('hidden.bs.modal', function () {
-        // Membersihkan nilai input
         var inputs = document.querySelectorAll('input');
         for (var i = 0; i < inputs.length; i++) {
             inputs[i].value = '';
         }
-
-        // Menghapus konten lainnya di dalam container
         var container = document.getElementById('namesContainer');
         while (container.firstChild) {
             container.removeChild(container.firstChild);

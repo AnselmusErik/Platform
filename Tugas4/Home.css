@@ -64,7 +64,7 @@ body {
 }
 
 .modal-content {
-    background-color: #6c757dbd;
+    background-color: #89959ea9;
     color: #ffffff;
     border-radius: 20px;
     box-shadow: 0 0 50px rgba(17, 163, 231, 0.978);
@@ -81,7 +81,7 @@ body {
 
 .modal-footer .btn {
     background-color: #ffffff;
-    color: #6c757d;
+    color: #000000;
     border-color: #ffffff;
 }
 
