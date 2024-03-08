@@ -11,6 +11,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
             event.preventDefault();
             return;
         }
+        if (jumlah < 0) {
+            alert("Jumlah harus bernilai positif");
+            event.preventDefault(); a
+            return;
+        }
+
         var container = document.getElementById('namesContainer');
         container.innerHTML = '';
 
@@ -46,6 +52,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
             var pilihanText = '';
 
             for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].value.trim() === '') {
+                    alert("Harap isi input terlebih dahulu");
+                    return;
+                }
+
                 var radio = document.createElement('input');
                 radio.type = 'radio';
                 radio.name = 'pilihan';
