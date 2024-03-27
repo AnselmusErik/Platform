@@ -1,0 +1,282 @@
+/* Mengatur variabel warna utama dan latar belakang */
+:root {
+    --main-color: #ffffff;
+    /* warna utama */
+    --bg-color: #000000;
+    /* latar belakang */
+}
+
+/* Mengatur tampilan body */
+body {
+    background-color: var(--bg-color);
+    /* latar belakang */
+    font-family: 'Arial', sans-serif;
+    /* jenis huruf */
+    color: var(--main-color);
+    /* warna teks */
+}
+
+/* Mengatur tampilan navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--main-color);
+    /* warna latar belakang */
+}
+
+/* Mengatur tampilan navbar-brand dan nav-link */
+.navbar-brand,
+.nav-link {
+    color: var(--bg-color);
+    /* warna teks */
+    transition: color 0.3s ease;
+    /* transisi warna */
+}
+
+/* Mengatur tampilan saat nav-link dihover */
+.nav-link:hover {
+    color: #000000;
+    /* warna teks */
+}
+
+/* Mengatur tampilan profile */
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 50px;
+    animation: fadeIn 2s ease-in-out;
+    /* animasi */
+}
+
+/* Animasi fadeIn */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Mengatur tampilan section */
+section {
+    min-height: 100vh;
+    padding: 5rem 9% 5rem;
+    background: var(--bg-color);
+    /* latar belakang */
+}
+
+/* Mengatur tampilan home */
+.home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8rem;
+    background: var(--bg-color);
+    /* latar belakang */
+}
+
+/* Mengatur tampilan judul h1 di home */
+.home.home-content h1 {
+    font-size: 6rem;
+    font-weight: 700;
+    line-height: 11.3;
+}
+
+/* Mengatur tampilan span */
+span {
+    color: var(--main-color);
+    /* warna teks */
+}
+
+/* Mengatur tampilan judul h3 di home-content */
+.home-content h3 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+/* Mengatur tampilan gambar di home */
+.home-img {
+    border-radius: 50%;
+}
+
+/* Mengatur tampilan gambar di home */
+.home-img img {
+    position: relative;
+    width: vw;
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--main-color);
+    /* bayangan */
+    cursor: pointer;
+}
+
+/* Mengatur tampilan saat gambar dihover */
+.home-img img:hover {
+    transform: scale(1.01);
+    filter: drop-shadow(0 0 25px var(--main-color));
+    -webkit-filter: drop-shadow(0 0 25px var(--main-color));
+}
+
+/* Mengatur tampilan teks di home-content */
+.home-content p {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+/* Mengatur tampilan ikon media sosial */
+.social-icon a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: 0.2rem solid var(--main-color);
+    font-size: 2rem;
+    border-radius: 50%;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: 0.3 ease;
+}
+
+/* Mengatur tampilan saat ikon media sosial dihover */
+.social-icon a:hover {
+    color: var(--bg-color);
+    transform: scale(1.3) translateY(-5px);
+    background: var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    /* bayangan */
+}
+
+/* Mengatur tampilan tombol */
+.btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--bg-color);
+    /* latar belakang */
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: var(--main-color);
+    /* warna teks */
+    border: 2px solid var(--main-color);
+    letter-spacing: 0.1rem;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+
+/* Mengatur tampilan saat tombol dihover */
+.btn:hover {
+    transform: scale(1.03);
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 25px var(--main-color);
+    /* bayangan */
+}
+
+/* Mengatur tampilan teks ketikan */
+.typing-text {
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+/* Mengatur tampilan span pada teks ketikan */
+.typing-text span {
+    position: relative;
+}
+
+/* Mengatur teks yang ditampilkan sebelum kursor pada teks ketikan */
+.typing-text span::before {
+    content: 'Software Developer';
+    color: var(--main-color);
+    /* warna teks */
+    animation: words 20s infinite;
+    /* animasi */
+}
+
+/* Mengatur tampilan kursor pada teks ketikan */
+.typing-text span::after {
+    content: '';
+    background: var(--bg-color);
+    /* latar belakang */
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid var(--bg-color);
+    right: -8;
+    animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
+    /* animasi */
+}
+
+/* Animasi kursor */
+@keyframes cursor {
+    to {
+        border-left: 3px solid var(--main-color);
+    }
+}
+
+/* Animasi kata-kata yang ditampilkan */
+@keyframes words {
+
+    0%,
+    20% {
+        content: 'Web Developer';
+    }
+
+    21%,
+    40% {
+        content: 'Software Developer';
+    }
+
+    41%,
+    60% {
+        content: 'Web Designer';
+    }
+
+    61%,
+    80% {
+        content: 'Photographer';
+    }
+
+    81%,
+    100% {
+        content: 'Ethical Hacker';
+    }
+}
+
+/* Animasi mengetik */
+@keyframes typing {
+
+    10%,
+    15%,
+    30%,
+    35%,
+    50%,
+    55%,
+    70%,
+    75%,
+    90%,
+    95% {
+        width: 0;
+    }
+
+    5%,
+    20%,
+    25%,
+    40%,
+    45%,
+    60%,
+    65%,
+    80%,
+    85% {
+        width: calc(100% + 8px);
+    }
+}

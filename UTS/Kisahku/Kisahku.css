@@ -1,0 +1,35 @@
+/* CSS */
+body {
+    background-color: #242424;
+    color: #fff;
+}
+
+.navbar {
+    background-color: #fff;
+    color: #000;
+}
+
+.card {
+    background-color: #333;
+    transition: transform .2s;
+    animation: fadeIn 2s ease-in;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

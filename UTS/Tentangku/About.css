@@ -1,0 +1,43 @@
+body {
+    background-color: #000;
+    color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    background-color: #fff;
+    color: #000;
+}
+
+.navbar a {
+    color: #000;
+    transition: color 0.5s ease;
+}
+
+.navbar a:hover {
+    color: #3000ee;
+}
+
+.container {
+    margin-top: 50px;
+    animation: fadeIn 2s ease;
+}
+
+.container .col {
+    background-color: #333;
+    color: #f0f0f0;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    transition: transform 0.5s ease;
+}
+
+.container .col:hover {
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
