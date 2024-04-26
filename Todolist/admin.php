@@ -74,7 +74,7 @@ $result = mysqli_query($db, $query);
         </ul>
         <a href="login.php" class="logout-button">Logout</a>
     </div>
-    <script src="script.js"></script>
+    <script src="admin.js"></script>
 </body>
 
 </html>
