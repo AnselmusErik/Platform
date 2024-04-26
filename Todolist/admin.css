@@ -78,11 +78,7 @@ form button:hover {
 @keyframes move {
     0% {
         transform: translateY(0);
-        -webkit-transform: translateY(0);
-        -moz-transform: translateY(0);
-        -ms-transform: translateY(0);
-        -o-transform: translateY(0);
-}
+    }
 
     50% {
         transform: translateY(10px);
@@ -93,6 +89,6 @@ form button:hover {
     }
 }
 
-#todolist {
+#todolist li:hover {
     animation: move 2s infinite;
 }

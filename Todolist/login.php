@@ -35,6 +35,7 @@ if (isset($_POST["submit"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Mahasiswa</title>
     <link rel="stylesheet" href="login.css">
+
 </head>
 
 <body>
@@ -49,6 +50,7 @@ if (isset($_POST["submit"])) {
         <label for="password">Password : </label>
         <input type="password" name="password" id="password">
         <button type="submit" name="submit">Login</button>
+
     </form>
 </body>
 
