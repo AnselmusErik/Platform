@@ -1,13 +1,11 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     var todolistItems = document.querySelectorAll('#todolist li');
 
-    todolistItems.forEach(function(item) {
-        item.addEventListener('mouseover', function() {
-            this.style.backgroundColor = '#f9f9f9';
-        });
-
-        item.addEventListener('mouseout', function() {
-            this.style.backgroundColor = '#fff';
-        });
+    todolistItems.forEach(function (item, index) {
+        setTimeout(function () {
+            item.style.animation = 'expand 0.8s ease-out';
+        }, index * 100);
     });
 });
+
+

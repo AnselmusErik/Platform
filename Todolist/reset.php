@@ -56,7 +56,7 @@ if (isset($_POST["submit"])) {
             <p><?php echo $success; ?></p>
         <?php endif; ?>
 
-        <label for="username">Username: </label>
+        <label for="username">Username : </label>
         <input type="text" name="username" id="username">
         <label for="old_password">Old Password : </label>
         <input type="password" name="old_password" id="old_password">

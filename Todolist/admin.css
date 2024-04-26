@@ -13,12 +13,24 @@ body {
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    animation: fadeIn 1s;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
 }
 
 h1 {
     color: #333;
     text-align: center;
     padding: 20px 0;
+    animation: slideDown 2s;
+}
+
+@keyframes slideDown {
+    0% {opacity: 0; transform: translateY(-50px);}
+    100% {opacity: 1; transform: translateY(0);}
 }
 
 #todolist {
@@ -36,6 +48,12 @@ h1 {
     margin-bottom: 5px;
     border-radius: 3px;
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1s;
+}
+
+@keyframes slideIn {
+    0% {opacity: 0; transform: translateX(-50px);}
+    100% {opacity: 1; transform: translateX(0);}
 }
 
 .logout-button {
@@ -53,32 +71,13 @@ h1 {
     background: #444;
 }
 
-form {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-form input[type="text"] {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    border-radius: 3px;
-    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
-}
-
-form button[type="submit"] {
-    background: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    margin-left: 10px;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-form button[type="submit"]:hover {
-    background: #444;
+@keyframes expand {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
