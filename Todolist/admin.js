@@ -1,11 +1,13 @@
-window.onload = function () {
-    var todolist = document.getElementById("todolist");
+document.addEventListener('DOMContentLoaded', function() {
+    var todolistItems = document.querySelectorAll('#todolist li');
 
-    todolist.addEventListener("mouseover", function () {
-        todolist.style.animationPlayState = "running";
-    });
+    todolistItems.forEach(function(item) {
+        item.addEventListener('mouseover', function() {
+            this.style.backgroundColor = '#f9f9f9';
+        });
 
-    todolist.addEventListener("mouseout", function () {
-        todolist.style.animationPlayState = "paused";
+        item.addEventListener('mouseout', function() {
+            this.style.backgroundColor = '#fff';
+        });
     });
-}
+});

@@ -29,8 +29,7 @@ function getNama()
     return array($nama, $mahasiswa_id);
 }
 
-function handlePostRequest()
-{
+function handlePostRequest() {
     global $db;
     // Dapatkan id mahasiswa
     list($nama, $mahasiswa_id) = getNama();
@@ -40,6 +39,10 @@ function handlePostRequest()
         $task = $_POST["task"];
         $query = "INSERT INTO todolist (task, mahasiswa_id) VALUES ('$task', '$mahasiswa_id')";
         mysqli_query($db, $query);
+
+        // Redirect ke halaman yang sama
+        header("Location: admin.php");
+        exit;
     }
 
     // Jika form selesai disubmit, ubah status tugas
@@ -47,6 +50,10 @@ function handlePostRequest()
         $id = $_POST["id"];
         $query = "UPDATE todolist SET status = '1' WHERE id = '$id'";
         mysqli_query($db, $query);
+
+        // Redirect ke halaman yang sama
+        header("Location: admin.php");
+        exit;
     }
 
     // Jika form batal disubmit, ubah status tugas
@@ -54,6 +61,10 @@ function handlePostRequest()
         $id = $_POST["id"];
         $query = "UPDATE todolist SET status = '0' WHERE id = '$id'";
         mysqli_query($db, $query);
+
+        // Redirect ke halaman yang sama
+        header("Location: admin.php");
+        exit;
     }
 
     // Jika form hapus disubmit, hapus tugas dari database
@@ -61,8 +72,13 @@ function handlePostRequest()
         $id = $_POST["id"];
         $query = "DELETE FROM todolist WHERE id = '$id'";
         mysqli_query($db, $query);
+
+        // Redirect ke halaman yang sama
+        header("Location: admin.php");
+        exit;
     }
 }
+
 
 
 function getTasks($mahasiswa_id)

@@ -27,6 +27,7 @@ $result = getTasks($mahasiswa_id);
             <input type="text" name="task" placeholder="Tambahkan tugas baru...">
             <button type="submit" name="add">Tambah <i class="fa-regular fa-square-plus"></i></button>
         </form>
+        
         <ul id="todolist">
             <?php while ($row = mysqli_fetch_assoc($result)) : ?>
                 <li>
@@ -53,7 +54,8 @@ $result = getTasks($mahasiswa_id);
                 </li>
             <?php endwhile; ?>
         </ul>
-        <a href="login.php" class="logout-button"><i class="fa-sharp fa-solid fa-right-from-bracket"></i> Logout</a>
+        <a href="logout.php" class="logout-button"><i class="fa-sharp fa-solid fa-right-from-bracket"></i> Logout</a>
+
     </div>
     <script src="admin.js"></script>
 </body>
