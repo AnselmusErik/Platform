@@ -3,7 +3,7 @@ include 'function.php';
 
 checkSession();
 list($nama, $mahasiswa_id) = getNama();
-handlePostRequest();
+$error = handlePostRequest();
 $result = getTasks($mahasiswa_id);
 ?>
 
@@ -28,6 +28,10 @@ $result = getTasks($mahasiswa_id);
             <button type="submit" name="add">Tambah <i class="fa-regular fa-square-plus"></i></button>
         </form>
         
+        <?php if ($error): ?>
+            <p style="color: red;"><?php echo $error; ?></p>
+        <?php endif; ?>
+
         <ul id="todolist">
             <?php while ($row = mysqli_fetch_assoc($result)) : ?>
                 <li>
@@ -55,7 +59,6 @@ $result = getTasks($mahasiswa_id);
             <?php endwhile; ?>
         </ul>
         <a href="logout.php" class="logout-button"><i class="fa-sharp fa-solid fa-right-from-bracket"></i> Logout</a>
-
     </div>
     <script src="admin.js"></script>
 </body>

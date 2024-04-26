@@ -5,8 +5,7 @@ session_start();
 // Sambungkan ke database Anda di sini
 $db = mysqli_connect("localhost", "root", "", "platformdb");
 
-function checkSession()
-{
+function checkSession() {
     if (!isset($_SESSION["username"])) {
         // Jika belum, alihkan ke halaman login
         header("Location: login.php");
@@ -14,8 +13,7 @@ function checkSession()
     }
 }
 
-function getNama()
-{
+function getNama() {
     global $db;
     // Dapatkan nama dari sesi
     $nama = $_SESSION["username"];
@@ -37,12 +35,12 @@ function handlePostRequest() {
     // Jika form ditambahkan, simpan tugas baru ke database
     if (isset($_POST["add"])) {
         $task = $_POST["task"];
-        $query = "INSERT INTO todolist (task, mahasiswa_id) VALUES ('$task', '$mahasiswa_id')";
-        mysqli_query($db, $query);
-
-        // Redirect ke halaman yang sama
-        header("Location: admin.php");
-        exit;
+        if (empty($task)) {
+            return 'Tugas tidak boleh kosong!';
+        } else {
+            $query = "INSERT INTO todolist (task, mahasiswa_id) VALUES ('$task', '$mahasiswa_id')";
+            mysqli_query($db, $query);
+        }
     }
 
     // Jika form selesai disubmit, ubah status tugas
@@ -50,10 +48,6 @@ function handlePostRequest() {
         $id = $_POST["id"];
         $query = "UPDATE todolist SET status = '1' WHERE id = '$id'";
         mysqli_query($db, $query);
-
-        // Redirect ke halaman yang sama
-        header("Location: admin.php");
-        exit;
     }
 
     // Jika form batal disubmit, ubah status tugas
@@ -61,10 +55,6 @@ function handlePostRequest() {
         $id = $_POST["id"];
         $query = "UPDATE todolist SET status = '0' WHERE id = '$id'";
         mysqli_query($db, $query);
-
-        // Redirect ke halaman yang sama
-        header("Location: admin.php");
-        exit;
     }
 
     // Jika form hapus disubmit, hapus tugas dari database
@@ -72,17 +62,12 @@ function handlePostRequest() {
         $id = $_POST["id"];
         $query = "DELETE FROM todolist WHERE id = '$id'";
         mysqli_query($db, $query);
-
-        // Redirect ke halaman yang sama
-        header("Location: admin.php");
-        exit;
     }
+
+    return null;
 }
 
-
-
-function getTasks($mahasiswa_id)
-{
+function getTasks($mahasiswa_id) {
     global $db;
     // Kemudian, gunakan id mahasiswa untuk mendapatkan semua tugas dari pengguna yang sedang login
     $query = "SELECT * FROM todolist WHERE mahasiswa_id = '$mahasiswa_id'";
@@ -90,3 +75,4 @@ function getTasks($mahasiswa_id)
 
     return $result;
 }
+?>
