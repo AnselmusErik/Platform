@@ -28,13 +28,13 @@ h1 {
 label {
     display: block;
     margin-bottom: 5px;
-    margin-left: 20px;
+    margin-left: 25px;
 }
 
 input[type="text"], input[type="password"] {
     width: 80%; /* Mengurangi lebar menjadi 80% */
     margin: 0 auto 20px; /* Tambahkan margin otomatis di sisi kiri dan kanan untuk memusatkan */
-    margin-left: 20px;
+    margin-left: 25px;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -44,7 +44,7 @@ input[type="text"], input[type="password"] {
 button {
     width: 70%; /* Mengurangi lebar menjadi 80% */
     margin: 0 auto 20px; /* Tambahkan margin otomatis di sisi kiri dan kanan untuk memusatkan */
-    margin-left: 45px;
+    margin-left: 50px;
     padding: 10px;
     background-color: #007BFF;
     color: #fff;

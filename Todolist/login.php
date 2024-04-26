@@ -10,21 +10,28 @@ if (isset($_POST["submit"])) {
     $password = $_POST['password'];
 
     // Query untuk mencari mahasiswa dengan nama dan NIM yang sesuai
-    $query = "SELECT * FROM mahasiswa WHERE nama = '$username' AND nim = '$password'";
+    $query = "SELECT * FROM mahasiswa WHERE nama = '$username'";
     $result = mysqli_query($db, $query);
 
     if (mysqli_num_rows($result) > 0) {
-        // Jika mahasiswa ditemukan, simpan username ke dalam sesi
-        $_SESSION["username"] = $username;
+        $user = mysqli_fetch_assoc($result);
+        // Verifikasi password
+        if ($password == $user['nim']) {
+            // Jika mahasiswa ditemukan, simpan username ke dalam sesi
+            $_SESSION["username"] = $username;
 
-        // Alihkan ke halaman admin
-        header("Location: admin.php");
-        exit;
+            // Alihkan ke halaman admin
+            header("Location: admin.php");
+            exit;
+        } else {
+            $error = "Password salah!";
+        }
     } else {
-        $error = true;
+        $error = "Username tidak ditemukan!";
     }
 }
 ?>
+
 
 
 <!DOCTYPE html>
@@ -43,13 +50,17 @@ if (isset($_POST["submit"])) {
         <h1>Login Mahasiswa</h1>
 
         <?php if (isset($error)) : ?>
-            <p>username / password salah !</p>
+            <p><?php echo $error; ?></p>
         <?php endif; ?>
+
         <label for="username">Username: </label>
         <input type="text" name="username" id="username">
         <label for="password">Password : </label>
         <input type="password" name="password" id="password">
         <button type="submit" name="submit">Login</button>
+
+        <!-- Link ke halaman reset password -->
+        <p><a href="reset.php">Lupa password?</a></p>
 
     </form>
 </body>
