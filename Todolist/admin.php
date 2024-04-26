@@ -1,56 +1,10 @@
 <?php
-// Mulai sesi
-session_start();
+include 'function.php';
 
-// Sambungkan ke database Anda di sini
-$db = mysqli_connect("localhost", "root", "", "platformdb");
-
-if (!isset($_SESSION["username"])) {
-    // Jika belum, alihkan ke halaman login
-    header("Location: login.php");
-    exit;
-}
-
-// Dapatkan nama dari sesi
-$nama = $_SESSION["username"];
-
-// Pertama, dapatkan id mahasiswa dari tabel mahasiswa
-$query = "SELECT id FROM mahasiswa WHERE nama = '$nama'";
-$result = mysqli_query($db, $query);
-$row = mysqli_fetch_assoc($result);
-$mahasiswa_id = $row['id'];
-
-// Jika form ditambahkan, simpan tugas baru ke database
-if (isset($_POST["add"])) {
-    $task = $_POST["task"];
-    $query = "INSERT INTO todolist (task, mahasiswa_id) VALUES ('$task', '$mahasiswa_id')";
-    mysqli_query($db, $query);
-}
-
-// Jika form selesai disubmit, ubah status tugas
-if (isset($_POST["done"])) {
-    $id = $_POST["id"];
-    $query = "UPDATE todolist SET status = '1' WHERE id = '$id'";
-    mysqli_query($db, $query);
-}
-
-// Jika form batal disubmit, ubah status tugas
-if (isset($_POST["cancel"])) {
-    $id = $_POST["id"];
-    $query = "UPDATE todolist SET status = '0' WHERE id = '$id'";
-    mysqli_query($db, $query);
-}
-
-// Jika form hapus disubmit, hapus tugas dari database
-if (isset($_POST["delete"])) {
-    $id = $_POST["id"];
-    $query = "DELETE FROM todolist WHERE id = '$id'";
-    mysqli_query($db, $query);
-}
-
-// Kemudian, gunakan id mahasiswa untuk mendapatkan semua tugas dari pengguna yang sedang login
-$query = "SELECT * FROM todolist WHERE mahasiswa_id = '$mahasiswa_id'";
-$result = mysqli_query($db, $query);
+checkSession();
+list($nama, $mahasiswa_id) = getNama();
+handlePostRequest();
+$result = getTasks($mahasiswa_id);
 ?>
 
 <!DOCTYPE html>
@@ -99,7 +53,7 @@ $result = mysqli_query($db, $query);
                 </li>
             <?php endwhile; ?>
         </ul>
-        <a href="login.php" class="logout-button"><i class="fa-sharp fa-solid fa-right-from-bracket"></i></a>
+        <a href="login.php" class="logout-button"><i class="fa-sharp fa-solid fa-right-from-bracket"></i> Logout</a>
     </div>
     <script src="admin.js"></script>
 </body>
