@@ -21,7 +21,7 @@ if (isset($_POST["submit"])) {
             $_SESSION["username"] = $username;
 
             // Alihkan ke halaman admin
-            header("Location: admin.php");
+            header("Location: ../Home/admin.php");
             exit;
         } else {
             $error = "Password salah!";
@@ -60,7 +60,7 @@ if (isset($_POST["submit"])) {
         <button type="submit" name="submit">Login</button>
 
         <!-- Link ke halaman reset password -->
-        <p><a href="reset.php">Lupa password?</a></p>
+        <p><a href="../Reset/reset.php">Lupa password?</a></p>
 
     </form>
 </body>

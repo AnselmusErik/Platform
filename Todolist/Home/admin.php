@@ -27,8 +27,8 @@ $result = getTasks($mahasiswa_id);
             <input type="text" name="task" placeholder="Tambahkan tugas baru...">
             <button type="submit" name="add">Tambah <i class="fa-regular fa-square-plus"></i></button>
         </form>
-        
-        <?php if ($error): ?>
+
+        <?php if ($error) : ?>
             <p style="color: red;"><?php echo $error; ?></p>
         <?php endif; ?>
 
@@ -50,7 +50,7 @@ $result = getTasks($mahasiswa_id);
                             <button type="submit" name="cancel"><i class="fa-solid fa-xmark"></i></button>
                         </form>
                     <?php endif; ?>
-                        <!-- Hapus -->
+                    <!-- Hapus -->
                     <form action="" method="post">
                         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
                         <button type="submit" name="delete"><i class="fa-solid fa-trash"></i></button>
@@ -58,7 +58,7 @@ $result = getTasks($mahasiswa_id);
                 </li>
             <?php endwhile; ?>
         </ul>
-        <a href="logout.php" class="logout-button"><i class="fa-sharp fa-solid fa-right-from-bracket"></i> Logout</a>
+        <a href="../Login/logout.php" class="logout-button"><i class="fa-sharp fa-solid fa-right-from-bracket"></i> Logout</a>
     </div>
     <script src="admin.js"></script>
 </body>

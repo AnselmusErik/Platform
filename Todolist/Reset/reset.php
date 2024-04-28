@@ -20,7 +20,7 @@ if (isset($_POST["submit"])) {
         $result = mysqli_query($db, $query);
         if ($result) {
             // Alihkan ke halaman login
-            header("Location: login.php");
+            header("Location: ../Login/login.php");
             exit;
         } else {
             $error = "Gagal mereset password!";
@@ -65,7 +65,7 @@ if (isset($_POST["submit"])) {
         <button type="submit" name="submit">Reset Password</button>
 
         <!-- Tambahkan ini untuk membuat link dengan ikon -->
-        <a href="login.php" style="display: block; margin-top: 5px; margin-left: 175px;">
+        <a href="../Login/login.php" style="display: block; margin-top: 5px; margin-left: 175px;">
             <i class="fas fa-arrow-left"></i></a>
     </form>
 
