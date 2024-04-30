@@ -21,7 +21,7 @@ if (isset($_POST["submit"])) {
             $_SESSION["username"] = $username;      
 
             // Alihkan ke halaman admin
-            header("Location: ../Home/admin.php");
+            header("Location: ../Home/home.php");
             exit;
         } else {
             $error = "Password salah!";
