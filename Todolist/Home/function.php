@@ -5,7 +5,8 @@ session_start();
 // Sambungkan ke database Anda di sini
 $db = mysqli_connect("localhost", "root", "", "platformdb");
 
-function checkSession() {
+function checkSession()
+{
     if (!isset($_SESSION["username"])) {
         // Jika belum, alihkan ke halaman login
         header("Location: login.php");
@@ -13,7 +14,8 @@ function checkSession() {
     }
 }
 
-function getNama() {
+function getNama()
+{
     global $db;
     // Dapatkan nama dari sesi
     $nama = $_SESSION["username"];
@@ -27,7 +29,8 @@ function getNama() {
     return array($nama, $mahasiswa_id);
 }
 
-function handlePostRequest() {
+function handlePostRequest()
+{
     global $db;
     // Dapatkan id mahasiswa
     list($nama, $mahasiswa_id) = getNama();
@@ -36,7 +39,7 @@ function handlePostRequest() {
     if (isset($_POST["add"])) {
         $task = $_POST["task"];
         if (empty($task)) {
-            return 'Tugas tidak boleh kosong!';
+            return 'Wajib isi terlebih dahulu!';
         } else {
             $query = "INSERT INTO todolist (task, mahasiswa_id) VALUES ('$task', '$mahasiswa_id')";
             mysqli_query($db, $query);
@@ -67,7 +70,8 @@ function handlePostRequest() {
     return null;
 }
 
-function getTasks($mahasiswa_id) {
+function getTasks($mahasiswa_id)
+{
     global $db;
     // Kemudian, gunakan id mahasiswa untuk mendapatkan semua tugas dari pengguna yang sedang login
     $query = "SELECT * FROM todolist WHERE mahasiswa_id = '$mahasiswa_id'";
@@ -75,4 +79,3 @@ function getTasks($mahasiswa_id) {
 
     return $result;
 }
-?>
