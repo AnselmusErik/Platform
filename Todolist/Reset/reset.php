@@ -64,7 +64,7 @@ if (isset($_POST["submit"])) {
         <input type="password" name="new_password" id="new_password">
         <button type="submit" name="submit">Reset Password</button>
 
-        <!-- Tambahkan ini untuk membuat link dengan ikon -->
+        <!-- untuk membuat link dengan ikon -->
         <a href="../Login/login.php" style="display: block; margin-top: 5px; margin-left: 175px;">
             <i class="fas fa-arrow-left"></i></a>
     </form>

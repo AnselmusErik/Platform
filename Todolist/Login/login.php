@@ -18,7 +18,7 @@ if (isset($_POST["submit"])) {
         // Verifikasi password
         if ($password == $user['nim']) {
             // Jika mahasiswa ditemukan, simpan username ke dalam sesi
-            $_SESSION["username"] = $username;
+            $_SESSION["username"] = $username;      
 
             // Alihkan ke halaman admin
             header("Location: ../Home/admin.php");
@@ -59,7 +59,18 @@ if (isset($_POST["submit"])) {
         <button type="submit" name="submit">Login</button>
 
         <!-- Link ke halaman reset password -->
-        <p><a href="../Reset/reset.php">Lupa password?</a></p>
+        <!-- <p><a href="../Reset/reset.php">Forgot Password?</a></p> -->
+        <!-- Link ke halaman register -->
+        <!-- <p><a href="register.php">Create Account</a></p> -->
+
+
+        <!-- Link ke halaman reset password dan register -->
+        <div class="link-container">
+            <a href="../Reset/reset.php">Forgot Password?</a>
+            <!-- <span></span> -->
+            <a href="../Register/regis.php">Create Account</a>
+        </div>
+
 
     </form>
 </body>
