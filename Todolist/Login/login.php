@@ -32,7 +32,6 @@ if (isset($_POST["submit"])) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -57,12 +56,6 @@ if (isset($_POST["submit"])) {
         <label for="password">Password : </label>
         <input type="password" name="password" id="password">
         <button type="submit" name="submit">Login</button>
-
-        <!-- Link ke halaman reset password -->
-        <!-- <p><a href="../Reset/reset.php">Forgot Password?</a></p> -->
-        <!-- Link ke halaman register -->
-        <!-- <p><a href="register.php">Create Account</a></p> -->
-
 
         <!-- Link ke halaman reset password dan register -->
         <div class="link-container">
