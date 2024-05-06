@@ -5,6 +5,7 @@ body {
     background-image: url('BG.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -45,7 +46,6 @@ input[type="password"] {
     border: 1px solid #ccc;
 }
 
-
 button {
     width: 70%;
     margin: 0 auto 20px;
@@ -60,7 +60,6 @@ button {
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
-
 
 p {
     color: red;
