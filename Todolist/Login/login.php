@@ -40,7 +40,6 @@ if (isset($_POST["submit"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Mahasiswa</title>
     <link rel="stylesheet" href="login.css">
-
 </head>
 
 <body>
@@ -63,7 +62,6 @@ if (isset($_POST["submit"])) {
             <!-- <span></span> -->
             <a href="../Register/regis.php">Create Account</a>
         </div>
-
 
     </form>
 </body>
