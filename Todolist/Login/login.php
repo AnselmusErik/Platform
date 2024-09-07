@@ -58,7 +58,7 @@ if (isset($_POST["submit"])) {
 
         <!-- Link ke halaman reset password dan register -->
         <div class="link-container">
-            <a href="../Reset/reset.php">Forgot Password?</a>
+            <a href="../Reset/reset.php">Reset Password?</a>
             <!-- <span></span> -->
             <a href="../Register/regis.php">Create Account</a>
         </div>

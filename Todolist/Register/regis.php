@@ -26,7 +26,7 @@ if (isset($_POST["submit"])) {
 
         if ($result) {
             // Alihkan ke halaman login
-            header("Location: login.php");
+            header("Location: ../Login/login.php");
             exit;
         } else {
             $error = "Gagal membuat akun!";
